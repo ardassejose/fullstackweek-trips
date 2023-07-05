@@ -15,7 +15,7 @@ export default function Header() {
   const handleMenuClick = () => setMenuIsOpen(!menuIsOpen)
 
   return (
-    <div className="container mx-auto h-[93px] flex justify-between items-center">
+    <div className="container mx-auto h-[93px] flex justify-between items-center p-3">
       <div className="relative h-[32px] w-[183px]">
         <Image src="/logo.png" alt="Fullstack Week" fill />
       </div>
