@@ -7,7 +7,7 @@ O SERVIÇO ESTÁ EM FASE BETA E ENCONTRA-SE SUJEITA A ALTERAÇÕES
 
 Conectando você às melhores aventuras e acomodações em uma viagem de conhecimento sem fronteiras!
 
-<img src="image.png" alt="drawing" style="max-width:250px; text-align: center; margin: 20px auto; display: grid;"/>
+<img src="image.png" alt="drawing" style="max-width:200px; text-align: center; margin: 20px auto; display: grid; place-content: center"/>
 
 
 ## Uma solução completa de viagens usando Next.js 13.4
