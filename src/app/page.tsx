@@ -1,7 +1,11 @@
-import Image from 'next/image'
+'use client'
+import Image from 'next/image';
+import TripSearch from './components/TripSearch';
 
 export default function Home() {
   return (
-    <h1>Home page</h1>
+    <div>
+      <TripSearch />
+    </div>
   )
 }
