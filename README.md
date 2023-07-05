@@ -7,6 +7,8 @@ O SERVIÇO ESTÁ EM FASE BETA E ENCONTRA-SE SUJEITA A ALTERAÇÕES
 
 Conectando você às melhores aventuras e acomodações em uma viagem de conhecimento sem fronteiras!
 
+![Fullstack Week: Página principal](image.png)
+
 
 ## Uma solução completa de viagens usando Next.js 13.4
 
