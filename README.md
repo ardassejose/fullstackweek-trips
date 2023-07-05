@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# ✈️ FullstackWeek Trips: Acomodações e viagens
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+O SERVIÇO ESTÁ EM FASE BETA E ENCONTRA-SE SUJEITA A ALTERAÇÕES
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Conectando você às melhores aventuras e acomodações em uma viagem de conhecimento sem fronteiras!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Uma solução completa de viagens usando Next.js 13.4
 
-## Learn More
+Com o objetivo de mostrar o que há de mais moderno no mercado, o Fullstack Week Trips foi desenvolvido pensando em agregar com o que há de melhor no mundo do programação web, trazendo como novidade o uso do mais recente _Next.js 13.4_
 
-To learn more about Next.js, take a look at the following resources:
+Todo o sistema possui uma UI e UX agradável construída em cima do Figma e implementado através do TailwindCSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O usuário pode se conectar com sua conta Google de forma segura, realizar pagamentos e verificar as reservas feitas. Tudo numa única aplicação extremamente veloz e altamente poderosa.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Tecnologia de ponta: Desenvolvido com a mais moderna tecnologia web, o FullstackWeek Trips utiliza o Next.js 13.4. Essa framework poderoso e versátil permite criar aplicações web de alto desempenho, garantindo uma experiência de usuário excepcional.
 
-## Deploy on Vercel
+- Autenticação fácil e segura: Implementamos a autenticação com Google através do NextAuth, proporcionando um processo de login simples e confiável. Com apenas alguns cliques, você pode acessar sua conta com segurança e começar a explorar nossas opções de viagens.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Respostas rápidas do banco de dados: Para oferecer uma experiência ágil, integramos o Prisma, o Supabase e o PostgreSQL. Essas tecnologias trabalham em conjunto para fornecer respostas rápidas do banco de dados, permitindo que você encontre e reserve acomodações e viagens de forma eficiente.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Pagamento seguro: Nosso sistema utiliza o serviço de pagamento confiável da Stripe. Com isso, você pode realizar transações com tranquilidade, sabendo que suas informações financeiras estão protegidas. Facilitamos o processo de pagamento para tornar suas reservas ainda mais convenientes.
+
+- Site rápido e bem indexado: Nosso site foi otimizado para proporcionar um rápido acesso às informações. Com técnicas avançadas de otimização e indexação, garantimos uma navegação ágil e eficiente, para que você encontre o que precisa rapidamente.
+
+- Dashboard de reservas: Oferecemos um dashboard exclusivo para que você possa gerenciar suas reservas de forma prática. Nesse painel personalizado, você terá uma visão geral das suas reservas, podendo fazer alterações, cancelamentos e adicionar serviços extras com facilidade.
+
+O Fullstack Week Trips reúne todas essas características para oferecer uma experiência de viagem completa e diferenciada. Desde a autenticação segura até um site de rápido acesso e um dashboard intuitivo, garantimos que sua jornada de reserva e gestão de viagens seja descomplicada e satisfatória.
+
+## Demonstração em tempo-real
+
+Em breve será disponibilizada
+
+
+## Autores
+
+- [@ardassejose](https://www.github.com/ardassejose)
+
