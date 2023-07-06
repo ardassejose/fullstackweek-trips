@@ -9,6 +9,7 @@ interface TripHeaderProps {
 export default function TripHeader({ trip }: TripHeaderProps) {
   return (
     <div className="flex flex-col">
+
       <div className="relative w-full h-[300px]">
         <Image src={trip.coverImage} alt={trip.name} fill style={{ objectFit: "cover" }} />
       </div>
