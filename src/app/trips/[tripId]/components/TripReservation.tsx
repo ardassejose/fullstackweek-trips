@@ -3,12 +3,14 @@ import Button from '@/components/Button'
 import DatePicker from '@/components/DatePicker'
 import Input from '@/components/Input'
 import { Trip } from '@prisma/client'
+import { differenceInDays } from 'date-fns'
 import { Controller, useForm } from 'react-hook-form'
 
 interface TripReservationProps {
   tripStartDate: Date
   tripEndDate: Date
   maxGuests: number
+  pricePerDay: number
 }
 
 interface TripReservationForm {
@@ -20,14 +22,15 @@ interface TripReservationForm {
 export default function TripReservation({
   tripStartDate,
   tripEndDate,
-  maxGuests
+  maxGuests,
+  pricePerDay,
 }: TripReservationProps) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
-    watch
+    watch,
   } = useForm<TripReservationForm>()
 
   const onSubmit = (data: any) => {
@@ -35,6 +38,7 @@ export default function TripReservation({
   }
 
   const startDate = watch('startDate')
+  const endDate = watch('endDate')
 
   return (
     <div className='flex flex-col px-5'>
@@ -102,7 +106,11 @@ export default function TripReservation({
 
       <div className='flex justify-between mt-2'>
         <p className='font-medium text-sm text-primaryDark'>Total:</p>
-        <p className='font-medium text-sm text-primaryDark'>R$2500</p>
+        <p className='font-medium text-sm text-primaryDark'>
+          {startDate && endDate
+            ? `R$${differenceInDays(endDate, startDate) * pricePerDay}`
+            : 'R$0,00'}
+        </p>
       </div>
 
       <div className='pb-10 w-full border-b-graySecondary'>
