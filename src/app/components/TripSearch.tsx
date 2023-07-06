@@ -18,8 +18,8 @@ export default function TripSearch() {
           <DatePicker className="w-full" placeholderText="Data de ida" onChange={() => {}} />
           <CurrencyInput placeholder="Orçamento" />
         </div>
-        
-        <Button>Buscar</Button>
+
+        <Button variant="primary">Buscar</Button>
       </div>
 
     </div>

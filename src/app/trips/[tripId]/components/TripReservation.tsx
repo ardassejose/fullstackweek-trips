@@ -24,7 +24,7 @@ export default function TripReservation({ trip }: TripReservationProps) {
       </div>
 
       <div className="pb-10 w-full border-b-graySecondary">
-        <Button className="mt-3 w-full">Reservar agrora</Button>
+        <Button variant="primary" className="mt-3 w-full">Reservar agrora</Button>
       </div>
     </div>
   )
