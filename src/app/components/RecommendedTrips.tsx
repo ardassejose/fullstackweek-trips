@@ -10,7 +10,7 @@ async function getTrips() {
 
 export default async function RecommendedTrips() {
   const data = await getTrips();
-  
+
   return (
     <div className="container mx-auto p-5">
       <div className="flex items-center gap-5">
