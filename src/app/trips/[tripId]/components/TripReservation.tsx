@@ -7,6 +7,7 @@ import { differenceInDays } from 'date-fns'
 import { Controller, useForm } from 'react-hook-form'
 
 interface TripReservationProps {
+  tripId: string
   tripStartDate: Date
   tripEndDate: Date
   maxGuests: number
@@ -20,6 +21,7 @@ interface TripReservationForm {
 }
 
 export default function TripReservation({
+  tripId,
   tripStartDate,
   tripEndDate,
   maxGuests,
@@ -33,8 +35,24 @@ export default function TripReservation({
     watch,
   } = useForm<TripReservationForm>()
 
-  const onSubmit = (data: any) => {
-    console.log({ data })
+  const onSubmit = async (data: TripReservationForm) => {
+    const req = await fetch('http://localhost:3000/api/trips/check', {
+      method: 'POST',
+      body: Buffer.from(
+        JSON.stringify({
+          startDate: data.startDate,
+          endDate: data.endDate,
+          tripId
+        })
+      ),
+    });
+
+    try {
+      const res = await req.json()
+      console.log(res)
+    } catch (error) {
+      console.error('Erro ao fazer parse da resposta JSON:', error)
+    }
   }
 
   const startDate = watch('startDate')
