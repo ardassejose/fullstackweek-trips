@@ -149,11 +149,16 @@ export default function TripReservation({
             value: true,
             message: 'Informe o número de hóspedes.',
           },
+          max: {
+            value: maxGuests,
+            message: `Número de hóspedes não pode ser maior que ${maxGuests}`,
+          }
         })}
         placeholder={`Número de hóspedes (max: ${maxGuests})`}
         className='mt-4'
         error={!!errors?.guests}
         errorMessage={errors?.guests?.message}
+        type='number'
       />
 
       <div className='flex justify-between mt-2'>
