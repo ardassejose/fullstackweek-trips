@@ -21,6 +21,15 @@ module.exports = {
         dark: '#717171',
         light: '#BBBFBF',
       },
+      animation: {
+        topIn: 'topIn .5s cubic-bezier(.48,.8,.61,.85) forwards',
+      },
+      keyframes: {
+        topIn: {
+          '0%': { transform: 'translateY(-30px)', opacity: '0' },
+          '100%': { transform: 'translateY(0px)', opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
