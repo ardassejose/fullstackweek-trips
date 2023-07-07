@@ -51,42 +51,39 @@ export default function TripReservation({
       ),
     })
 
-    try {
-      const res = await req.json()
-      if (res?.error?.code === 'TRIP_ALREADY_BOOKED') {
-        setError('startDate', {
-          type: 'manual',
-          message: 'Esta data já está reservada.',
-        })
 
-        return setError('endDate', {
-          type: 'manual',
-          message: 'Esta data já está reservada.',
-        })
-      }
+    const res = await req.json()
+    if (res?.error?.code === 'TRIP_ALREADY_BOOKED') {
+      setError('startDate', {
+        type: 'manual',
+        message: 'Esta data já está reservada.',
+      })
 
-      if (res?.error?.code === 'INVALID_START_DATE') {
-        return setError('startDate', {
-          type: 'manual',
-          message: 'Data inválida.',
-        })
-      }
-
-      if (res?.error?.code === 'INVALID_END_DATE') {
-        return setError('endDate', {
-          type: 'manual',
-          message: 'Data inválida.',
-        })
-      }
-
-      router.push(
-        `/trips/${tripId}/confirmation?startDate=${data.startDate?.toISOString()}&endDate=${data.endDate?.toISOString()}&guests=${
-          data.guests
-        }`
-      )
-    } catch (error) {
-      console.error('Erro ao fazer parse da resposta JSON:', error)
+      return setError('endDate', {
+        type: 'manual',
+        message: 'Esta data já está reservada.',
+      })
     }
+
+    if (res?.error?.code === 'INVALID_START_DATE') {
+      return setError('startDate', {
+        type: 'manual',
+        message: 'Data inválida.',
+      })
+    }
+
+    if (res?.error?.code === 'INVALID_END_DATE') {
+      return setError('endDate', {
+        type: 'manual',
+        message: 'Data inválida.',
+      })
+    }
+
+    router.push(
+      `/trips/${tripId}/confirmation?startDate=${data.startDate?.toISOString()}&endDate=${data.endDate?.toISOString()}&guests=${data.guests
+      }`
+    )
+
   }
 
   const startDate = watch('startDate')
@@ -170,7 +167,7 @@ export default function TripReservation({
         </p>
       </div>
 
-      <div className='pb-10 w-full border-b-graySecondary'>
+      <div className='pb-10 border-b border-b-graySecondary w-full'>
         <Button
           onClick={() => handleSubmit(onSubmit)()}
           variant='primary'
