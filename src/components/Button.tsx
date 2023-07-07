@@ -9,6 +9,7 @@ function Button({ className, variant = "primary", ...props }: ButtonProps) {
   const variantClasses = {
     primary: "bg-primary text-white hover:bg-primaryDark",
     outlined: "bg-transparent border-2 border-primary text-primary hover:scale-110",
+    danger: "bg-transparent border-2 border-red-600 text-red hover:bg-red-600 hover:text-white",
   };
 
   const _className = twMerge(variantClasses[variant], "appearance-none rounded-lg p-2 text-sm font-medium shadow transition-all", className);
