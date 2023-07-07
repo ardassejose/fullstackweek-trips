@@ -4,6 +4,7 @@ import DatePicker from '@/components/DatePicker'
 import Input from '@/components/Input'
 import { Trip } from '@prisma/client'
 import { differenceInDays } from 'date-fns'
+import { useRouter } from 'next/navigation'
 import { Controller, useForm } from 'react-hook-form'
 
 interface TripReservationProps {
@@ -33,7 +34,10 @@ export default function TripReservation({
     formState: { errors },
     control,
     watch,
+    setError,
   } = useForm<TripReservationForm>()
+
+  const router = useRouter();
 
   const onSubmit = async (data: TripReservationForm) => {
     const req = await fetch('http://localhost:3000/api/trips/check', {
@@ -42,14 +46,44 @@ export default function TripReservation({
         JSON.stringify({
           startDate: data.startDate,
           endDate: data.endDate,
-          tripId
+          tripId,
         })
       ),
-    });
+    })
 
     try {
       const res = await req.json()
-      console.log(res)
+      if (res?.error?.code === 'TRIP_ALREADY_BOOKED') {
+        setError('startDate', {
+          type: 'manual',
+          message: 'Esta data já está reservada.',
+        })
+
+        return setError('endDate', {
+          type: 'manual',
+          message: 'Esta data já está reservada.',
+        })
+      }
+
+      if (res?.error?.code === 'INVALID_START_DATE') {
+        return setError('startDate', {
+          type: 'manual',
+          message: 'Data inválida.',
+        })
+      }
+
+      if (res?.error?.code === 'INVALID_END_DATE') {
+        return setError('endDate', {
+          type: 'manual',
+          message: 'Data inválida.',
+        })
+      }
+
+      router.push(
+        `/trips/${tripId}/confirmation?startDate=${data.startDate?.toISOString()}&endDate=${data.endDate?.toISOString()}&guests=${
+          data.guests
+        }`
+      )
     } catch (error) {
       console.error('Erro ao fazer parse da resposta JSON:', error)
     }
@@ -136,7 +170,7 @@ export default function TripReservation({
           onClick={() => handleSubmit(onSubmit)()}
           variant='primary'
           className='mt-3 w-full'>
-          Reservar agrora
+          Reservar agora
         </Button>
       </div>
     </div>
