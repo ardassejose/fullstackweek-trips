@@ -22,12 +22,12 @@ export default function TripSearch() {
   };
 
   return (
-    <div className="container mx-auto bg-search-background bg-no-repeat bg-center bg-cover p-5">
-      <h1 className="font-semibold text-2xl text-primaryDark text-center">
+    <div className="container mx-auto p-5 bg-search-background bg-cover bg-center bg-no-repeat lg:py-28">
+      <h1 className="font-semibold text-2xl text-primaryDark text-center lg:text-[2.5rem]">
         Encontre sua próxima <span className="text-primary">viagem!</span>
       </h1>
 
-      <div className="flex flex-col gap-4 mt-5">
+      <div className="flex flex-col gap-4 mt-5 lg:flex-row lg:max-w-[948px] lg:mx-auto lg:p-4 lg:bg-primary lg:mt-12 lg:bg-opacity-20 lg:rounded-lg">
         <Input placeholder="Onde você quer ir?" className="text-primaryDark"
           error={!!errors.text}
           errorMessage={errors.text?.message}
@@ -38,7 +38,7 @@ export default function TripSearch() {
             }
           })} />
 
-        <div className="flex flex-row gap-4">
+        <div className="flex gap-4 lg:w-full">
 
           {/* Data de volta */}
           <Controller
@@ -61,7 +61,7 @@ export default function TripSearch() {
 
         </div>
 
-        <Button variant="primary" onClick={() => handleSubmit(onSubmit)()}>Buscar</Button>
+        <Button variant="primary" onClick={() => handleSubmit(onSubmit)()} className="w-full lg:w-1/2 lg:h-fit">Buscar</Button>
       </div>
 
     </div>

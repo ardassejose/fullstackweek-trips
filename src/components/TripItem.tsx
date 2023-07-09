@@ -11,7 +11,7 @@ interface TripItemProps {
 const TripItem = ({ trip }: TripItemProps) => {
   return (
     <Link href={`/trips/${trip.id}`}>
-      <div className="flex flex-col">
+      <div className="flex flex-col hover:scale-105 transition-all">
         <div className="relative h-[280px] w-[280px]">
           <Image
             src={trip.coverImage}
