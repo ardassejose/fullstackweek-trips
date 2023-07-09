@@ -10,6 +10,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700
 export const metadata = {
   title: 'FSW Trips',
   description: 'Encontre as melhores viagens em um só lugar!',
+  icon: '/icon.png',
 }
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <link rel="icon" href="/icon.png" sizes="any" />
       <body className={poppins.className}>
         <NextAuthProvider>
           <ToastProvider>
