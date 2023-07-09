@@ -36,21 +36,22 @@ const MyTrips = () => {
   }, [status, router, fetchReservations]);
 
   return (
-    <div className="container mx-auto p-5 lg:max-w-[600px]">
+    <div className="container mx-auto p-5">
       <h1 className="font-semibold text-primaryDarker text-xl">Minhas Viagens</h1>
-      {reservations.length > 0 ? (
-        reservations?.map((reservation) => (
-          <UserReservationItem fetchReservations={fetchReservations} key={reservation.id} reservation={reservation} />
-        ))
-      ) : (
-        <div className="flex flex-col">
-          <p className="mt-2 font-medium text-primaryDarker">Você ainda não tem nenhuma reserva! =(</p>
-
-          <Link href="/">
-            <Button variant="primary" className="w-full mt-2">Fazer reserva</Button>
-          </Link>
-        </div>
-      )}
+      <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {reservations.length > 0 ? (
+          reservations?.map((reservation) => (
+            <UserReservationItem fetchReservations={fetchReservations} key={reservation.id} reservation={reservation} />
+          ))
+        ) : (
+          <div className="flex flex-col">
+            <p className="mt-2 font-medium text-primaryDarker">Você ainda não tem nenhuma reserva! =(</p>
+            <Link href="/">
+              <Button variant="primary" className="w-full mt-2">Fazer reserva</Button>
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
