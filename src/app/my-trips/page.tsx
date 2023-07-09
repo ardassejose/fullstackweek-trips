@@ -36,7 +36,7 @@ const MyTrips = () => {
   }, [status, router, fetchReservations]);
 
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 lg:max-w-[600px]">
       <h1 className="font-semibold text-primaryDarker text-xl">Minhas Viagens</h1>
       {reservations.length > 0 ? (
         reservations?.map((reservation) => (
