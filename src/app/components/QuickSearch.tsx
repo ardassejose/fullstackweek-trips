@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function QuickSearch() {
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 lg:max-w-[900px]">
       <div className="flex items-center gap-5">
         <div className="w-full h-[2px] bg-graySecondary"></div>
         <h2 className="font-medium whitespace-nowrap text-grayPrimary">Tente pesquisar por</h2>
