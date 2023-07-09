@@ -40,7 +40,7 @@ export default function TripReservation({
   const router = useRouter();
 
   const onSubmit = async (data: TripReservationForm) => {
-    const req = await fetch('http://localhost:3000/api/trips/check', {
+    const req = await fetch('/api/trips/check', {
       method: 'POST',
       body: Buffer.from(
         JSON.stringify({
